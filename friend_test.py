@@ -26,9 +26,8 @@ def test_calculate_current_age():
     """
     print("\r")  # carriage return
     print(" -- calculate_current_age unit test")
-    assert (
-        calculate_current_age(2000) == 23
-    )  # STATIC: will change as the years progress
+    assert calculate_current_age(2000) == 23
+    # STATIC: will change as the years progress
 
 
 def test_calculate_current_age():
@@ -40,6 +39,21 @@ def test_calculate_current_age():
     birth_year = 1995
     today = date.today()
     expected_age = today.year - birth_year
+    print("\r")  # carriage return
+    print(" -- calculate_current_age unit test")
     assert (
         calculate_current_age(birth_year) == expected_age
     )  # DYNAMIC: calculates the current year
+
+def test_calculate_future_age():
+    """
+    GIVEN a current user age
+    WHEN that age is passed to this function
+    THEN the user's age is accurately calculated +10
+    """
+    user_age = 20
+    print("\r")  # carriage return
+    print(" -- calculate_future_age unit test")
+    assert (
+        calculate_future_age(user_age) == 30
+    )
